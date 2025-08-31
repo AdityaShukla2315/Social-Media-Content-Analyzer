@@ -20,6 +20,14 @@ const ContentAnalysis = () => {
     }
 
     setIsLoading(true);
+    
+    // Scroll to loading section
+    setTimeout(() => {
+      const loadingSection = document.getElementById('loading-section');
+      if (loadingSection) {
+        loadingSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }, 100);
 
     try {
       let result;
@@ -32,6 +40,14 @@ const ContentAnalysis = () => {
 
       setAnalysisResult(result);
       toast.success('Content analysis completed!');
+      
+      // Scroll to results section after analysis
+      setTimeout(() => {
+        const resultsSection = document.getElementById('results-section');
+        if (resultsSection) {
+          resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 500);
     } catch (error) {
       console.error('Analysis error:', error);
       toast.error('Failed to analyze content. Please try again.');

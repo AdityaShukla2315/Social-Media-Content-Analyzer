@@ -114,7 +114,7 @@ function App() {
 
             {/* Loading State */}
             {isLoading && (
-              <div className="text-center py-12">
+              <div id="loading-section" className="text-center py-12">
                 <div className="inline-flex flex-col items-center">
                   <div className="animate-spin rounded-full h-12 w-12 border-4 border-blue-500 border-t-transparent mb-4"></div>
                   <p className="text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">Analyzing your content...</p>
@@ -125,7 +125,7 @@ function App() {
 
             {/* Step 3: Results */}
             {analysisResult && (
-              <div className="transform transition-all duration-500">
+              <div id="results-section" className="transform transition-all duration-500">
                 <AnalysisResults result={analysisResult} />
                 
                 {/* New Analysis Button */}
